@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hextext!! | PigC.Art</title>
+    </head>
+    <script>
+        function textToColorSequence() {
+            var input = document.getElementById('input').value;
+            if (input != "") {
+                // add exclamation marks to the input if it isnt divisible by three
+                if (input.length % 3 !== 0) {
+                    while (input.length % 3 !== 0) {
+                        input += "!";
+                    }
+                }
+                // turn the input characters into an array of hex values
+                var hexArray = [];
+                for (let i = 0; i < input.length; i++) {
+                    hexArray.push(input.charCodeAt(i).toString(16));
+                }
+                // combine the hex values in threes to create color codes
+                var colors = [];
+                while (hexArray.length) {
+                    colors.push(hexArray.splice(0,3).join(''));
+                }
+                // generate html
+                var colorhtml = "";
+                for (color of colors) {
+                    colorhtml += `<span style="color:#${color}">███</span>`;
+                }
+                document.getElementById("output").innerHTML=colorhtml;
+                // generate BBcode
+                var outputTextStyle = document.querySelector('input[name = "outputTextStyle"]:checked').id;
+                var outputText = "";
+                if (outputTextStyle == "BBcode") {
+                    for (color of colors) {
+                        outputText += `[color=#${color}]███[/color]`;
+                    }
+                }
+                else if (outputTextStyle == "HTML") {
+                    outputText = colorhtml;
+                }
+                else {
+                    outputText = colors;
+                }
+                document.getElementById("outputText").value=outputText;
+            } else {
+                clearText();
+            }
+        }
+        function copyText(){
+            document.getElementById("outputText").select();
+            document.execCommand("copy");
+        }
+        function clearText(){
+            document.getElementById("input").value="";
+            document.getElementById("output").innerHTML="<br>";
+            document.getElementById("outputText").value="";
+        }
+        function codeToText() {
+            // extract array of color codes from input text
+            var colors = document.getElementById("codeInput").value.match(/#[a-f0-9]{6}/gi)
+            // split color codes into codes for individual characters
+            var hexCharacterCodes = []
+            for (color of colors) {
+                hexCharacterCodes = hexCharacterCodes.concat(color.substring(1).match(/..?/g));
+            }
+            // convert hex character codes to decimal
+            var outputText = "";
+            for (characterCode of hexCharacterCodes) {
+                var decimalValue = parseInt(characterCode, 16);
+                var character = String.fromCharCode(decimalValue);
+                outputText += character;
+            }
+            document.getElementById("textOutput").innerHTML=outputText;
+        }
+        function clearCode(){
+            document.getElementById("textOutput").innerHTML="<br>";
+            document.getElementById("codeInput").value="";
+        }
+    </script>
+
+    <style>
+        body {background:#222;color:#fff;font-family: 'Bahnschrift', sans-serif;text-align: center;word-wrap: break-word;}
+        h1 {font-size: 50px; font-family: 'Courier New', Courier, monospace;}
+        .input{width: 541px; height: 20px; font-size: 16px;}
+        .output {font-size: 50px; font-family: 'Courier New', Courier, monospace; margin: 30px;}
+        details {border: 2px solid #fff; width:fit-content; margin: 0 auto;}
+        hr {border: 1px solid #fff; width: 700px; margin: 32px auto;}
+
+        .post {width: 541px; padding: 30px 20px; text-align: left; font-family: Arial, Helvetica, sans-serif}
+        .post_header {margin-bottom: 10px;}
+        .post_header p {margin: 0;}
+        .post_header_avatar{float:left; margin-right: 10px;}
+        .post_header_name{margin: 0;}
+        .post_header_name_box {height: 25px;}
+        .post_header_username{font-size: 16px; font-weight: bold;}
+        .post_header_details{font-size: 13px; opacity: 50%;}
+        .post_content{margin: 15px 0; font-size: 14px; line-height: 18px;}
+    </style>
+
+    <body>
+        <h1><span style="background:#486578">Hex</span><span style="background:#746578">tex</span><span style="background:#742121">t!!</span></h1>
+        <hr>
+        <h2>Text to color:</h2>
+        <p>Write text here to create colors based on the ASCII codes</p>
+        <input oninput="textToColorSequence()" id="input" type="text" class="input">
+        <button onclick="clearText()">Clear</button>
+        <div id="output" class="output"><br></div>
+        <input onChange="textToColorSequence()" type="radio" name="outputTextStyle" id="BBcode" checked><label for="BBcode">BBcode</label>
+        <input onChange="textToColorSequence()" type="radio" name="outputTextStyle" id="HTML"><label for="HTML">HTML</label>
+        <input onChange="textToColorSequence()" type="radio" name="outputTextStyle" id="Hex"><label for="Hex">Hex</label><br>
+        <input type="text" id="outputText" class="input">
+        <button onclick="copyText()">Copy</button>
+        <hr>
+        <h2>code to Text:</h2>
+        <p>paste html (or similar) containing color codes here to convert the colors to text</p>
+        <input oninput="codeToText()" id="codeInput" type="text" class="input">
+        <button onclick="clearCode()">Clear</button>
+        <div id="textOutput" class="output"><br></div>
+        <hr>
+        <details><summary>The Prompt</summary>
+            <div class="post">
+                <div class="post_header">
+                    <img src="collision.png" class="post_header_avatar">
+                    <div class="post_header_name">
+                        <div class="post_header_name_box"><p class="post_header_username">_Collision_</p></div>
+                        <p class="post_header_details">Shared publicly - Dec 16, 22</p>
+                    </div>
+                </div>
+                <div class="post_content">
+                    <span style="color:#2B6F6C">If I wanted to represent "Col" as a color, I could convert the letters into ASCII and then convert each character's ASCII code into individual RGB values to create a color. I could string multiple colors together to string out a message if I wanted to. This text is the color you'd get for "Col," with a hex value of #2B6F6C.</span>
+                </div>
+            </div>
+        </details>
+    </body>
+</html>
