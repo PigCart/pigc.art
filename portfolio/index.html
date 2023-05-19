@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -16,17 +16,24 @@
         a:hover {color: #eb7399;}
         .img-container {background: #888; width: fit-content;}
         main {text-align: center; width: 1300px; max-width: 100%; margin: 0 auto;}
-        .carousel {width: 100%; height: 616px; background: #fff; padding: 8px; max-width: 100vw;}
-        .carousel-item {width:100%; height: 600px;}
+        .carousel {width: 100%; height: 616px; background: #fff; padding: 8px; max-width: 100vw; max-height: 100vw;}
+        .carousel-item {width:100%; height: 600px; max-height: calc(100vw - 16px);}
         .flexgrid {display:flex;flex-wrap: wrap; justify-content: center;}
         .flexgrid div {transition: 0.2s; margin: 20px; height: 400px; width: 90%; background-size: 100%; background-repeat: none; background-position: center;}
         .flexgrid div div {background-size: 100%;margin: 0; opacity:0.99; background-repeat: none; background-position: center;}
         .flexgrid div div:hover{opacity: 0.01;}
-        .projectbox {background: #eee; color: #000; padding: 8px; margin: 8px auto; max-width: 90%; width: 600px}
-        .projectbox a {background: #000; color: #fff; display: block; position: relative; right: 0; width: fit-content; padding: 0 8px; border-radius: 8px; margin: 0 0 0 auto;}
-        .projectbox a:hover {background: #eb7399;}
+        .projectbox { padding: 8px; margin: 8px auto; max-width: 90%; width: 600px}
+        .projectbox a {color: #fff; border: solid 2px #fff; display: block; position: relative; right: 0; width: fit-content; padding: 0 8px; border-radius: 8px; margin: 0 0 0 auto;}
+        .projectbox a:hover {background: #eb7399; border:solid 2px #eb7399}
         section {margin-top: 50px; padding-top: 16px;}
         model-viewer {width: 800px; height: 600px; margin: 8px auto; background: #666; border: #fff solid 8px; max-width: 100%;}
+
+        @media screen and (max-width: 816px) {
+            model-viewer {border-left: none; border-right: none;}
+        }
+        @media screen and (max-width: 1316px) {
+            .carousel {padding: 8px 0}
+        }
     </style>
 </head>
 <body>
@@ -105,9 +112,9 @@
                     <h2>Characters</h2>
                     <p>Character models made for various projects</p>
                 </div>
-                <model-viewer alt="Serpent with legs 3D model" src="CharacterModelling_Idle.gltf" ar poster="serpent-idle.gif" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-                <model-viewer alt="Newt 3D model" src="newt.glb" ar poster="serpent-idle.gif" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-                <model-viewer alt="Dogman 3D model" src="dogman.glb" ar poster="serpent-idle.gif" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+                <model-viewer alt="Serpent 3D model"  src="CharacterModelling_Idle.gltf"  ar poster="loading-poster.png" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+                <model-viewer alt="Newt 3D model"     src="newt.glb"                      ar poster="loading-poster.png" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+                <model-viewer alt="Dogman 3D model"   src="dogman.glb"                    ar poster="loading-poster.png" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
             </section>
         </main>
 </body>
