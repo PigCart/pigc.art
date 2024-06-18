@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+<title>one hour timer</title>
+<script>
+    timeInSeconds = 3600;
+    isActivelyCounting = true;
+    hasStarted = false;
+    var audio = new Audio("bass.ogg");
+    setInterval(() => {
+        if (hasStarted) {
+            if (isActivelyCounting) {
+                timeInSeconds--;
+                displayTime = new Date(timeInSeconds * 1000).toISOString().slice(11, 19);
+                document.getElementById("timer").innerHTML = displayTime;
+                document.title = displayTime;
+                if (timeInSeconds == 0) {
+                    isActivelyCounting = false;
+                }
+            } else {
+                alarm();
+            }
+        }
+    }, 1000);
+    function alarm() {
+        audio.play();
+        document.getElementById("timer").style.color = "red";
+        setTimeout(() => {
+            document.getElementById("timer").style.color = "black";
+        }, 500);
+    }
+    function start() {
+        hasStarted = true;
+    }
+</script>
+<style>
+    body {
+        font-family: 'comic mono', 'Courier New', Courier, monospace;
+    }
+    #timer {
+        font-size: 100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <h1>Simple One Hour Timer</h1>
+    <div id="timer">01:00:00</div>
+    <button onclick="start()">Start</button>
+</body>

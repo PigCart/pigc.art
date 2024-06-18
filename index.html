@@ -1,34 +1,152 @@
 <!DOCTYPE html>
+<html lang="en-gb">
 <head>
-<title>PigCart</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-body {background: url(portfolio/bg.jpg) center; background-size: cover; background-position: fixed;
-      margin: 0;
-      font-family: 'Bahnschrift', Arial, sans-serif;}
-header {background: #eb7399 url(logo.png); background-position: center; background-size: contain; background-repeat: no-repeat; height: 128px; width: 100%; margin: 0 auto;}
-main {width: 1000px; max-width: 100%; margin: 100px auto; box-sizing: border-box;
-      background: linear-gradient(180deg, rgba(235,115,153,0.5) 0%, rgba(122,110,232,0.5) 100%);
-      padding: 16px; border-radius: 8px; border: 4px solid; border-image-source: linear-gradient(180deg, rgba(235,115,153,1) 0%, rgba(122,110,232,1) 100%); border-image-slice: 1; clip-path: inset(0 round 8px)}
-section {background: #fff; padding: 8px;}
-</style>
+    <title>PigCart - Portfolio and Project Hub</title>
+    <meta charset="UTF-8">
+    <link href="/styles.css" rel="stylesheet">
 </head>
+<style>
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0; padding: 0; border: 0 none; outline: 0;
+}
+.font {
+    font-family: Comic Mono, "Comic Sans Ms", "Courier New", monospace;
+}
+.space-bar {
+    background: linear-gradient(rgba(43, 157, 202, 100) 0%,rgba(37, 112, 177, 100) 3%,rgba(34, 103, 160, 100) 51%,rgba(20, 61, 93, 100) 98%,rgba(0, 0, 0, 100) 100%);
+    height: 40px; margin: 20px 0 100px;
+    text-align: center; font-size: 12px; color: #fff; position:sticky; top: 0;
+    display: flex; align-items: center; justify-content: center; gap: 32px;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: #0000007e 0 0 8px;
+}
+main {
+    width: 1100px; background: #fff; padding: 15px; margin: 0 auto; max-width: 100%; overflow: hidden; box-sizing: border-box;
+}
+.header {
+    display: flex; gap: 4px; text-shadow: 2px 2px 0 #000; margin-bottom: 15px;
+}
+.avatar {
+    width: 173px; height: 173px; min-width: 173px;
+    border-top-left-radius: 5px; border-bottom-left-radius: 5px; border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #eb7399; box-sizing: border-box;
+}
+.cover {
+    border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #eb7399 url(logo.png); background-position: center; background-size: contain; background-repeat: no-repeat;
+    color: #FFF;
+    width: 100%; height: 173px; padding: 15px; box-sizing: border-box;
+}
+.cover_header {
+  color: #FFF;
+  padding: 15px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.content {
+    display: flex;
+}
+.profile_menu a {
+    width: 65px; height: 66px; font-size: 11px; display: block; padding: 10px 0; text-align: center; box-sizing: border-box;
+}
+.profile_menu img {
+    height: 30px;
+}
+.menu_arrow {
+  width: 14px; height: 14px;
+  border: 1px solid #dbdbdb; background: #fff;
+  border-top: none; border-right: none;
+  transform: rotate(45deg);
+  flex-grow: 0; flex-shrink: 0;
+  margin-right: -8px;
+}
+.middle {
+    width: 100%; border: 1px solid #dbdbdb; border-radius: 5px; box-shadow: 0 0 32px #00000010; padding: 16px;
+}
+.sidebar-widget {
+    width: 300px; border: 1px solid #dbdbdb; border-radius: 5px; box-shadow: 0 0 32px #00000010; box-sizing: border-box; margin-left: 15px; margin-bottom: 15px; padding: 15px;
+}
+h2 {font-size: 16px;}
+</style>
 <body>
-<main>
-<section>
-<header></header>
-<p>Hello welcome to a web site.</p>
-<p>I make Minecraft mods. Get them from <a href="https://www.curseforge.com/members/pigcart/projects">Curseforge</a> or <a href="https://modrinth.com/user/PigCart">Modrinth</a>.</p>
-<p>If you need help with them you can pop into the <a href="discord/">discord server.</a></p>
-<p>I make <a href="https://www.youtube.com/@PigCart">silly videos</a> with my friends.</p>
-<p><a href="https://twitter.com/pigcart">heres a thing I don't often use</a>. <a href="https://pigcart.tumblr.com">Heres another</a>.</p>
-<p>And <a href="https://twitch.tv/pikkatt">Twitch</a>.</p>
-<p>I wrote a <a href="simpsons.pdf">simpsons script</a> because someone told me to.</p>
-<p>Same person also told me to make a sonic game: <a href="https://drive.google.com/file/d/1jqNCT_VCxKdE71-zBBzQ1FyTz_85XbbO/view?usp=drive_link">sonicStealsSocks.zip</a>. I'm so sorry.</p>
-<p>This site is <a href="https://github.com/PigCart">open source</a>, as are most of my projects.</p>
-<p><a href="/hextext/">Hextext</a>.</p>
-<p>Thank you. bye bye.</p><br>
-<p><a href="https://www.youtube.com/watch?v=Q1vkjOvD-zs&list=PLSNL__isgNDhO_UjOv7YeXf32ymuTliLD">meow</a></p>
-</section>
-</main>
+    <div>
+        <div class="space-bar">
+            <p>Thanks for visiting! Please enjoy this soothing ambient railway soundscape:</p>
+            <audio controls loop>
+                <source src="trains-breaking-loop.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="box">
+        <main>
+            <div class="header">
+                <div class="avatar"></div>
+                <div class="cover">
+                        <h1 class="cover_header_name">
+                            PigCart
+                        </h1>
+                        <div class="cover_header_quote">
+                            {HEADER_QUOTE}
+                        </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="profile_menu">
+                    <a href=""><img src="CoCollegeParkTheater2493under_construction.gif">Notice</a>
+                </div>
+                <div class="menu_arrow" style="margin-top: 20px;"></div>
+                <div class="middle">
+                    <center>
+                    <img src="pjpjdabomb_4u2cGIFSconstruction.gif">
+                    <img src="HeHeartlandGarden5828constructionuc3.gif">
+                    <img src="AtAthensOlympus5623instvitaconstruction.gif">
+                    <img src="CaCapitolHillCongress3062CONSTRUCTION1.GIF">
+                    <img src="ReResearchTriangleThinktank3720uconstruct.gif">
+                    <img src="Lair7946Imagesconstruct2.gif">
+                    <img src="HeHeartlandPark5787imagesConstruction1.gif">
+                    <img src="BaBajaCanyon9450construct4.gif">
+                    <img src="RaRainForestAndes2577movingunderconstruction.gif">
+                    <img src="coconrado.geoconstruct6.gif">
+                    <img src="CoColosseumHoop2296construction_ani.gif">
+                    <img src="HeHeartlandVillage1215imagesconstruction.gif">
+                    <img src="BaBajaMesa3235construct.gif">
+                    <img src="ArArea51Portal7671construction-an.gif">
+                    <img src="AtAthens7735construct.gif">
+                    <img src="CaCapitolHill1114Under_Construction.gif">
+                    <img src="Nova2449construction.gif">
+                    <img src="HoHollywoodHeights4199Construction-Lemmings.gif">
+                    <img src="knknrlrthmlrmiscconstructionbanner.gif">
+                    <img src="HeHeartlandFlats7015underconstruction.gif">
+                    <img src="HeartlandPrairie1139notusingconstructionbar.gif">
+                    <img src="HeHeartlandPark2601underconstructionbar9.gif">
+                    <img src="ajaj0077lines_bulletsconstruction.gif">
+                    <img src="mamagnolia_acresunderconstruction.gif">
+                    <img src="pentagonbarracks1178imagesunder-construction.gif">
+                    </center>
+                </div>
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h2>Sitemap</h2>
+                        <div><a href="hextext/" >Hextext</a></div>
+						<div><a href="fotu/">Flight of the Unmutuals</a></div>
+                        <div><a href="portfolio/">Portfolio (Old)</a></div>
+						<div><a href="timer/">One Hour Timer</a></div>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h2>Minecraft Projects</h2>
+                        <a href="https://modrinth.com/user/PigCart">Downloads: Modrinth</a><br>
+                        <a href="https://www.curseforge.com/members/pigcart/projects">Downloads: Curseforge</a><br>
+                        <a href="https://github.com/pigcart">Source code: Github</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        </div>
+    </div>
 </body>
+</html>

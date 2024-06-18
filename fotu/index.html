@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <title>Flight of the Unmutuals - PigCart</title>
+    <link href="../styles.css" rel="stylesheet">
+    <style>
+        a {color: #fff;}
+        a:hover {color: #eb7399;}
+        .img-container {background: #888; width: fit-content;}
+        main {text-align: center; width: 1300px; max-width: 100%; margin: 0 auto;}
+        .carousel {width: 100%; height: 616px; background: #fff; padding: 8px; max-width: 100vw; max-height: 100vw;}
+        .carousel-item {width:100%; height: 600px; max-height: calc(100vw - 16px);}
+        .flexgrid {display:flex;flex-wrap: wrap; justify-content: center;}
+        .flexgrid div {transition: 0.2s; margin: 20px; height: 400px; width: 90%; background-size: 100%; background-repeat: none; background-position: center;}
+        .flexgrid div div {background-size: 100%;margin: 0; opacity:0.99; background-repeat: none; background-position: center;}
+        .flexgrid div div:hover{opacity: 0.01;}
+        .projectbox { padding: 8px; margin: 8px auto; max-width: 90%; width: 600px}
+        .projectbox a {color: #fff; border: solid 2px #fff; display: block; position: relative; right: 0; width: fit-content; padding: 0 8px; border-radius: 8px; margin: 0 0 0 auto;}
+        .projectbox a:hover {background: #eb7399; border:solid 2px #eb7399}
+        article {margin-top: 50px; padding-top: 16px;}
+
+        @media screen and (max-width: 1316px) {
+            .carousel {padding: 8px 0}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article style="margin-bottom: 100px;">
+            <div style="display: flex; justify-content: flex-end;">
+            <div style="width: 40%; align-self: center; color: #fff; transform: translateX(100px) scale(1.2);">
+                <h1>Flight Of The Unmutuals</h1>
+                <p>A simple Among Us / TTT inspired deduction game based on the 60s tv show The Prisoner and its main filming location, Portmeirion.</p>
+                <p>Created with Unreal Engine.</p>
+            </div>
+            <div style="align-self: flex-end; width: 60%; transform: translateX(100px);">
+            <img src="prisonerassets.png" width="1024px" style="max-width: 100%;">
+            </div>
+            </div>
+            <div id="carousel2" class="carousel slide" data-ride="carouse2">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel2" data-slide-to="1"></li>
+                    <li data-target="#carousel2" data-slide-to="2"></li>
+                </ul>
+            
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" style="background: url('prisonergame.png') center; background-size: cover;"></div>
+                    <div class="carousel-item" style="background: url('prisonergame-2.png') center; background-size: cover;"></div>
+                    <div class="carousel-item" style="background: url('prisonergame-3.png') center; background-size: cover;"></div>
+                </div>
+            
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#carousel2" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel2" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </article>
+    </main>
+</body>
